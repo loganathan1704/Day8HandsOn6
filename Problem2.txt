@@ -1,0 +1,52 @@
+package com.hands6;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Scanner;
+
+class UserMainCode1{
+	
+	HashMap<Integer,String> ht=new HashMap<>();
+	
+	 int  afterDelete() {
+		int n, c=0;
+		Iterator<Integer> it=ht.keySet().iterator();
+		while(it.hasNext()) {
+			n=it.next();
+			if(n%3==0) {
+				c++;
+			}			
+		}
+		return c;
+	}
+	void input() {
+		Scanner s1=new Scanner(System.in);
+		int num=s1.nextInt();
+		for(int i=0;i<num;i++) {
+			ht.put(s1.nextInt(),s1.next());
+		}
+	}
+	
+}
+
+public class Problem2 {
+
+	public static void main(String[] args) {
+	    UserMainCode1 u1=new UserMainCode1();
+	    u1.input();
+	    u1.afterDelete();
+		System.out.println(u1.afterDelete());
+	}
+
+}
+/*Output:
+4
+339
+LOGU
+1010
+PRAVEEN
+3366
+KAVI
+2020
+DINESH
+2 */

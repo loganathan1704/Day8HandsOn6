@@ -1,0 +1,52 @@
+package com.hands6;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Scanner;
+
+class UserMainCode3{
+	static HashMap<Integer,String> hm=new HashMap<Integer,String>();
+	
+	public static String getMaxValue() {
+		int m=0;
+		String s="";
+		Iterator<Integer> it1=hm.keySet().iterator();
+		while(it1.hasNext()) {
+			int a=it1.next();
+			if(a>m) {
+				m=a;
+				String s1=hm.get(a);
+				s=s1;
+			}
+		}
+		return s;
+	}
+	void input() {
+		Scanner s3=new Scanner(System.in);
+		int n=s3.nextInt();
+		for(int i=0;i<n;i++) {
+			hm.put(s3.nextInt(),s3.next());
+		}
+	}
+}
+
+public class Problem3 {
+
+	public static void main(String[] args) {
+		UserMainCode3 u2=new UserMainCode3();
+		u2.input();
+		u2.getMaxValue();
+		System.out.println(u2.getMaxValue());
+
+	}
+
+}
+/*Output:
+3
+12
+Logu
+9
+exide
+7
+sf
+Logu */
